@@ -1,8 +1,11 @@
 import ProductsPage from "./ProductsPage"
+import { homePageStore } from "../store/homePageStore"
 
 const CategoryPage = () => {
+  const productsByCategory = homePageStore(state => state.productsByCategory);
+  const loadingCategoryProduct = homePageStore(state => state.loadingCategoryProduct);
   return (
-    <ProductsPage>
+    <ProductsPage products={productsByCategory} loading={loadingCategoryProduct}>
         
     </ProductsPage>
   )
